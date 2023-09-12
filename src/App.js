@@ -1,5 +1,6 @@
-import Component1 from "./Component1";
+
 import {useState} from 'react';
+import Input from './ControlledInputs/Input';
 
 function App(){
   const [inputValue, setInputValue] = useState({"firstName" : '', "lastName" : ''});
@@ -12,7 +13,7 @@ function App(){
 
   return(
     <div>
-      <Component1 
+      <Input
         type = "text" 
         placeholder = "Enter your First Name" 
         name = "firstName"
@@ -20,7 +21,7 @@ function App(){
         handleChange = {handleChange}
         />
 
-      <Component1 
+      <Input 
         type = "text"
         placeholder = "Enter your Last Name"
         name = "lastName"
