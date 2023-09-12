@@ -4,8 +4,9 @@ import Input from './ControlledInputs/Input';
 
 function App(){
   const [inputValue, setInputValue] = useState({"firstName" : '', "lastName" : ''});
+
   function handleChange(event){
-    console.log(event.target.name)
+    event.preventDefault();
     const name = event.target.name;
     const value = event.target.value;
     setInputValue(prevValues => ({...prevValues, [name] : value}));

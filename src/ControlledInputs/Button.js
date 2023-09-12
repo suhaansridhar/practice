@@ -1,6 +1,8 @@
-function Button(){
+function Button(props){
     return(
-        <div></div>
+        <div className="button--container">
+            button component
+        </div>
     )
 }
 
