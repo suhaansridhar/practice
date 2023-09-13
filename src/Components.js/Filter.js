@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { nanoid } from "nanoid";
 
 function Filter(){
     const names = ["Suhaan", 'sahil', 'bhoumik', 'sharada', 'sridhar', 'divya'];
@@ -8,17 +9,23 @@ function Filter(){
 
     function handleChange(event){
         setSearch(event.target.value);
-        console.log(event.target.value);
-        const newArray = display.filter(item => item.includes(event.target.value));
+        const newArray = display.filter(item => item.toLowerCase().includes(event.target.value));
+        setDisplay(newArray);
+    }
+
+    function handleChangeButton(event){
+        const newArray = display.filter(item => item.toLowerCase().includes(event.target.value));
         setDisplay(newArray);
     }
 
     return(
         <div className="filter--container">
             <input type="text" onChange={handleChange} value={search}/>
-            {names.map((item) => {
+            <button value="bhoumik" onClick={handleChangeButton}><p>Bhoumik</p></button>
+            <button value="suhaan" onClick={handleChangeButton}><p>suhaan</p></button>
+            {display.map((item) => {
                 return(
-                    <h1>{item}</h1>
+                    <h1 key={item}>{item}</h1>
                 )
             })}
         </div>
