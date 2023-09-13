@@ -2,7 +2,7 @@ import { useState } from "react";
 import { nanoid } from "nanoid";
 
 function Filter(){
-    const names = ["Suhaan", 'sahil', 'bhoumik', 'sharada', 'sridhar', 'divya'];
+    const names = ["Shaun", 'simone', 'brian', 'sally', 'san jose', 'denmark'];
 
     const [display, setDisplay] = useState(names);
     const [search, setSearch] = useState('');
@@ -21,8 +21,8 @@ function Filter(){
     return(
         <div className="filter--container">
             <input type="text" onChange={handleChange} value={search}/>
-            <button value="bhoumik" onClick={handleChangeButton}><p>Bhoumik</p></button>
-            <button value="suhaan" onClick={handleChangeButton}><p>suhaan</p></button>
+            <button value="brian" onClick={handleChangeButton}><p>brian</p></button>
+            <button value="shaun" onClick={handleChangeButton}><p>shaun</p></button>
             {display.map((item) => {
                 return(
                     <h1 key={item}>{item}</h1>
