@@ -23,11 +23,14 @@ function Filter(){
             <input type="text" onChange={handleChange} value={search}/>
             <button value="brian" onClick={handleChangeButton}><p>brian</p></button>
             <button value="shaun" onClick={handleChangeButton}><p>shaun</p></button>
-            {display.map((item) => {
-                return(
-                    <h1 key={item}>{item}</h1>
-                )
-            })}
+            {names.filter((item) => {
+                return item.toLowerCase() === '' ? item : item.toLowerCase().includes(search)
+                }).map(item => {
+                    return(
+                        <h1 key={item}>{item}</h1>
+                    )
+                })
+            }
         </div>
     )
 }
